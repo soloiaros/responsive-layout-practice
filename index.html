@@ -9,7 +9,7 @@
 <body>
   <section class="hero">
     <div class="image-container">
-      <img src="./resources/closeup-light-bg.png" alt="Close-up photo of the author of the page">
+      <img src="./resources/closeup-light-bg.png" alt="Author of the page">
       <p class="name">Iaroslav Solovev</p>
     </div>
     <div class="about-container">
@@ -178,7 +178,12 @@
       </div>
     </div>
     <div class="image-container">
-      
+      <picture>
+        <source 
+          srcset="./resources/footer-cropped.jpg"
+          media="(max-width: 1000px)">
+        <img src="./resources/footer-full.jpg" alt="Author at a hackathon">
+      </picture>
     </div>
   </footer>
 </body>
