@@ -9,7 +9,12 @@
 <body>
   <section class="hero">
     <div class="image-container">
-      <img src="./resources/closeup-light-bg.png" alt="Author of the page">
+      <picture>
+        <source
+          srcset="./resources/header-cropped.png"
+          media="(max-width: 1000px)">
+        <img src="./resources/header-full.png" alt="Author of the page">
+      </picture>
       <p class="name">Iaroslav Solovev</p>
     </div>
     <div class="about-container">
