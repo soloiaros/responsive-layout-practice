@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'Cascadia Mono';
+    src: url('./fonts/CascadiaMono-Regular.woff2') format('woff2'),
+        url('./fonts/CascadiaMono-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('./fonts/Nunito-ExtraLight.woff2') format('woff2'),
+        url('./fonts/Nunito-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cascadia Mono', 'Courier New', Courier, monospace;
+}
