@@ -33,6 +33,7 @@ html, * {
 
 
 body {
+  display: block;
   margin: 0;
   padding: 0;
   font-family: var(--font-regular);
@@ -227,4 +228,112 @@ footer {
       height: auto;
     }
   }
+}
+
+@media screen and (600px <= width) {
+
+  body {
+    --hero-image-offset: 6rem;
+    display: grid;
+    justify-items: center;
+  }
+  
+  section.hero {
+    display: flow-root;
+    background-color: var(--darker-background);
+    max-width: 80%;
+    margin-top: var(--hero-image-offset);
+    margin-inline: calc(var(--hero-image-offset));
+    
+    .image-container {
+      float: left;
+      margin-left: calc(var(--hero-image-offset) * -1);
+      margin-top: calc(var(--hero-image-offset) * -1);
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+      max-width: min(400px, 50%);
+      display: flex;
+      justify-content: center;
+      position: relative;
+
+      picture {
+        display: inherit;
+        justify-content: inherit;
+      }
+
+      p {
+        font-family: var(--font-headings);
+        font-size: 3rem;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        color: var(--light-text-color);
+        text-align: left;
+        width: 1px;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .about-container {
+      display: inline;
+      text-wrap-style: pretty;
+    }
+  }
+
+  footer {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    gap: 1.5rem;
+    padding-block: 3rem;
+    padding-inline: 1.5rem;
+
+    .info-container {
+      padding: 0;
+      display: grid;
+      gap: 1.5rem;
+
+      h1 {
+        text-align: left;
+      }
+    }
+
+    .image-container {
+      max-width: 100%;
+
+      picture {
+        display: inherit;
+        justify-content: inherit;
+        
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .socials-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    width: fit-content;
+    float: right;
+
+
+    a {
+      display: grid;
+      place-items: center;
+      color: inherit;
+      
+      svg {
+        color: inherit;
+        width: 2rem;
+        height: auto;
+      }
+    }
+  }
+
 }
