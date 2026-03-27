@@ -29,6 +29,13 @@ html, * {
   --footer-background: #113681;
   --dark-text-color: #070505;
   --light-text-color: #ede5db;
+  --shadow-background-color: 39deg 8% 54%;
+  --shadow-preset:
+    0.3px 0.7px 0.9px hsl(var(--shadow-background-color) / 0.29),
+    0.8px 1.7px 2.1px -0.6px hsl(var(--shadow-background-color) / 0.29),
+    1.5px 3.4px 4.2px -1.2px hsl(var(--shadow-background-color) / 0.29),
+    3.1px 6.9px 8.5px -1.9px hsl(var(--shadow-background-color) / 0.29),
+    6px 13.3px 16.4px -2.5px hsl(var(--shadow-background-color) / 0.29);
 }
 
 
@@ -120,7 +127,7 @@ section.my-work {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-preset);
   min-height: 300px;
   align-items: start;
   
@@ -244,8 +251,10 @@ footer {
     max-width: 80%;
     margin-top: var(--hero-image-offset);
     margin-inline: calc(var(--hero-image-offset));
+    box-shadow: var(--shadow-preset);
     
     .image-container {
+      box-shadow: var(--shadow-preset);
       float: left;
       margin-left: calc(var(--hero-image-offset) * -1);
       margin-top: calc(var(--hero-image-offset) * -1);
