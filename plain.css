@@ -22,6 +22,13 @@ html, * {
   padding: 0;
   --font-headings: 'Cascadia Mono', 'Courier New', Courier, monospace;
   --font-regular: 'Nunito', Arial, Helvetica, sans-serif;
+  --background: #e3dfd8;
+  --darker-background: #acb8d1;
+  --primary-accent: #d09412;
+  --secondary-accent: #9a2d4d;
+  --footer-background: #113681;
+  --dark-text-color: #070505;
+  --light-text-color: #ede5db;
 }
 
 
@@ -30,6 +37,8 @@ body {
   padding: 0;
   font-family: var(--font-regular);
   font-size: 18px;
+  background: var(--background);
+  color: var(--dark-text-color);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -161,6 +170,11 @@ section.my-work {
       padding: 0 1rem;
     }
   }
+}
+
+footer {
+  background-color: var(--footer-background);
+  color: var(--light-text-color);
 }
 
 .socials-container {
