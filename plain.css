@@ -92,6 +92,7 @@ section.hero {
     p {
       font-family: var(--font-headings);
       font-size: 3rem;
+      
       bottom: 0;
       left: 0;
       position: absolute;
@@ -116,10 +117,13 @@ section.my-work {
   display: grid;
   justify-content: center;
   gap: 1rem;
+  width: 100%;
 
   .projects-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1rem));
+    width: 100%;
+    gap: 2rem;
+    grid-template-columns: minmax(200px, 350px);
   }
 }
 
@@ -265,31 +269,30 @@ footer {
       justify-content: center;
       position: relative;
 
-      picture {
-        display: inherit;
-        justify-content: inherit;
-      }
-
       p {
-        font-family: var(--font-headings);
-        font-size: 3rem;
-        bottom: 0;
-        left: 0;
-        position: absolute;
-        color: var(--light-text-color);
-        text-align: left;
-        width: 1px;
-      }
-
-      img {
-        width: 100%;
+        font-size: min(calc(3rem - (1rem - 2vw) * 3), 3rem);
       }
     }
 
-    .about-container {
-      display: inline;
-      text-wrap-style: pretty;
+  }
+
+  section.my-work {
+    display: grid;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+
+    .projects-container {
+      display: grid;
+      width: 100%;
+      gap: 2rem;
+      grid-template-columns: minmax(250px, 400px) minmax(250px, 400px);
     }
+  }
+
+  .about-container {
+    display: inline;
+    text-wrap-style: pretty;
   }
 
   footer {
