@@ -76,7 +76,12 @@ a:has(svg):active {
 }
 
 section {
+  margin-inline: max(var(--hero-image-offset), calc((100vw - 1200px) / 2));
   padding: 1.5rem;
+}
+
+footer {
+  padding-inline: max(1.5rem, calc((100vw - 1200px) / 2));
 }
 
 section.hero {
@@ -143,10 +148,14 @@ section.my-work {
   
   .image-container {
     position: relative;
-
+    max-height: 200px;
+    width: 100%;
+    
     img {
       width: 100%;
       object-fit: cover;
+      height: 100%;
+      filter: brightness(0.25) saturate(0.75);
     }
     h3 {
       color: var(--light-text-color);
@@ -259,7 +268,7 @@ footer {
 }
 .tag.swift {
   background-color: var(--swift-color);
-  color: var(--dark-text-color);
+  color: var(--light-text-color);
 }
 .tag.python {
   background-color: var(--python-color);
@@ -286,7 +295,7 @@ footer {
   }
 }
 
-@media screen and (600px <= width) {
+@media screen and (700px <= width) {
 
   body {
     --hero-image-offset: 6rem;
@@ -299,7 +308,6 @@ footer {
     background-color: var(--darker-background);
     max-width: 80%;
     margin-top: var(--hero-image-offset);
-    margin-inline: calc(var(--hero-image-offset));
     box-shadow: var(--shadow-preset);
     
     .image-container {
@@ -319,6 +327,16 @@ footer {
       }
     }
 
+    .about-container {
+      display: block;
+      text-wrap: pretty;
+
+      h1 {
+        text-align: left;
+        width: auto;
+      }
+    }
+
   }
 
   section.my-work {
@@ -331,13 +349,8 @@ footer {
       display: grid;
       width: 100%;
       gap: 2rem;
-      grid-template-columns: minmax(250px, 400px) minmax(250px, 400px);
+      grid-template-columns: minmax(200px, 400px) minmax(200px, 400px);
     }
-  }
-
-  .about-container {
-    display: inline;
-    text-wrap-style: pretty;
   }
 
   footer {
@@ -393,4 +406,19 @@ footer {
     }
   }
 
+}
+
+@media screen and (1000px <= width) {
+
+  section.hero {
+    .about-container {
+      padding-right: 100px;
+    }
+  }
+
+  section.my-work {
+    .projects-container {
+      grid-template-columns: minmax(200px, 400px) minmax(200px, 400px) minmax(200px, 400px);
+    }
+  }
 }
