@@ -20,7 +20,7 @@ const loadCards = async () => {
     const cardElement = `
       <div class="card">
         <div class="image-container" aria-hidden="true">
-          <img src="${previewImage}">
+          <img src="${previewImage}" alt="Project preview: screenshot or art">
           <h3>${project.name.split('-').map(word => word.toUpperCase()).join(' ')}</h3>
         </div>
         <div class="info-container">
