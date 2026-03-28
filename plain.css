@@ -36,6 +36,12 @@ html, * {
     1.5px 3.4px 4.2px -1.2px hsl(var(--shadow-background-color) / 0.29),
     3.1px 6.9px 8.5px -1.9px hsl(var(--shadow-background-color) / 0.29),
     6px 13.3px 16.4px -2.5px hsl(var(--shadow-background-color) / 0.29);
+  --css-color: #283b5e;
+  --html-color: #c21238;
+  --js-color: #eaa418;
+  --scss-color: #f093b4;
+  --swift-color: #cb4f00;
+  --python-color: #22547e;
 }
 
 
@@ -155,18 +161,18 @@ section.my-work {
 
   .info-container {
     display: grid;
-    gap: 0.5rem;
+    gap: 1rem;
     .top-line {
+      padding: 0 1rem;
       display: flex;
-      justify-content: space-around;
+      align-items: center;
+      justify-content: space-between;
 
       .tags-container {
         display: flex;
         gap: 0.5rem;
 
         .tag {
-          background-color: var(--secondary-accent);
-          color: hsla(from var(--light-text-color) h s l / 95%);
           padding: .25rem .5rem;
           border-radius: 16px;
           font-size: 0.75rem;
@@ -175,14 +181,27 @@ section.my-work {
           font-family: Arial, Helvetica, sans-serif;
           font-weight: 700;
         }
-        .tag.prime {
-          background-color: var(--primary-accent);
+      }
+
+      .external-links {
+        display: flex;
+        gap: 1rem;
+        a {
+          color: inherit;
+          text-decoration: none;
+          display: grid;
+          place-items: center;
+          svg {
+            color: inherit;
+            width: 1.5rem;
+            height: auto;
+          }
         }
       }
     }
 
     .bottom-line {
-      padding: 0 1rem;
+      padding: 0 1rem 4rem 1rem;
     }
   }
 }
@@ -222,6 +241,31 @@ footer {
   }
 }
 
+.tag.javascript {
+  background-color: var(--js-color);
+  color: var(--dark-text-color);
+}
+.tag.html {
+  background-color: var(--html-color);
+  color: var(--light-text-color);
+}
+.tag.css {
+  background-color: var(--css-color);
+  color: var(--light-text-color);
+}
+.tag.scss {
+  background-color: var(--scss-color);
+  color: var(--dark-text-color);
+}
+.tag.swift {
+  background-color: var(--swift-color);
+  color: var(--dark-text-color);
+}
+.tag.python {
+  background-color: var(--python-color);
+  color: var(--light-text-color);
+}
+
 .socials-container {
   display: flex;
   gap: 2rem;
@@ -232,6 +276,7 @@ footer {
     display: grid;
     place-items: center;
     color: inherit;
+    text-decoration: none;
     
     svg {
       color: inherit;
