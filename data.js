@@ -7,11 +7,41 @@ const getGHAccountData = async (username) => {
   return { pinnedData, userReposData };
 }
 
+const getRepoImage = async (username, repo) => {
+  try {
+    const response = await fetch(`https://api.github.com/repos/${username}/${repo}/readme`, {
+      headers: {
+        "Accept": "application/vnd.github.v3.raw",
+      }
+    });
+
+    if (!response.ok) throw new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
+
+    const markdownText = await response.text();
+
+    const regex = /(?:!\[.*?\]\((.*?)\))|(?:<img.*?src=["'](.*?)["'])/;
+    const match = markdownText.match(regex);
+    if (match) {
+      let imageUrl = match[1] || match[2];
+      imageUrl = imageUrl.split(' ')[0]; 
+      return imageUrl;
+    } else {
+        return null;
+    }
+  } catch (error) {
+    console.error("Error:", error.message);
+  }
+
+
+}
+
 const loadCards = async () => {
   const projectContainer = document.querySelector('.projects-container');
   
   const { pinnedData, userReposData } = await getGHAccountData('soloiaros');
   for (let project of pinnedData) {
+    const imageURL = await getRepoImage('soloiaros', project.name);
+    console.log(imageURL);
     const cardElement = `
       <div class="card">
         <div class="image-container" aria-hidden="true">
